@@ -1,7 +1,7 @@
 # Q2 Seatwork 1 PYSCRIPT
 from pyscript import document, display
 
-def check_club(event):
+def check_club(e):
     # Clear previous result
     document.getElementById("announce_result").innerHTML = ""
     
@@ -27,13 +27,13 @@ def check_club(event):
 
     # Check if candidate exists in list (True or False)
     check_candidate = name in candidates
+    # Turns check_candidate to integer (0 or 1)
+    check_candidate = int(check_candidate)
 
-    messages = [
-        f"Sorry {name}, your name is not on the list.",
-        f"Congratulations {name}! You are now part of the ICT club."
-    ]
+    # Tuple that contains messages with index (0 for Sorry... and 1 for Congratulations...)
+    messages = ((f"Sorry {name}, your name is not on the list."), (f"Congratulations {name}! You are now part of the ICT Club."))
 
-    # Select message using boolean as list index (False=0, True=1)
+    # Select messages based on index of message based on the check_candidate number
     result_message = messages[check_candidate]
 
     display(result_message, target="announce_result")
