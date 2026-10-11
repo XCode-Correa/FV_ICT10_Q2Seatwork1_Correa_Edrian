@@ -26,7 +26,8 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 20px 20px 60px 20px;
+            position: relative;
         }
 
         .container {
@@ -144,6 +145,22 @@
             animation: fadeIn 0.3s ease;
         }
 
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #18181b;
+            border-top: 1px solid #27272a;
+            padding: 12px 20px;
+            font-size: 0.8rem;
+            color: #a1a1aa;
+            letter-spacing: 0.5px;
+            text-align: center;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
@@ -175,6 +192,10 @@
             <div id="announce_result"></div>
         </div>
     </div>
+
+    <footer>
+        &copy; 2026 ICT 2nd Quarter | Edrian Correa | 10 - Ruby AY26-27
+    </footer>
     
     <script type="py" src="main.py"></script>
 </body>
