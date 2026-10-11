@@ -4,15 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link rel="icon" type="image/png" href="EXAC.png">
+
     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
     <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
-    <title>Seatwork 1</title>
+    <title>Seatwork 1 - ICT Club Checker</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #121214;
+            color: #e4e4e7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 1px solid #3f3f46;
+            padding: 4px;
+            background: #202024;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 0.85rem;
+            color: #a1a1aa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .name_input {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: #202024;
+            border: 1px solid #3f3f46;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .name_input:focus {
+            border-color: #06b6d4;
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+        }
+
+        .name_input::placeholder {
+            color: #71717a;
+        }
+
+        .button-contain button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+        }
+
+        .button-contain button:hover {
+            opacity: 0.9;
+        }
+
+        .button-contain button:active {
+            transform: scale(0.98);
+        }
+
+        #announce_result {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            word-break: break-word;
+            padding: 14px 16px;
+            background-color: #202024;
+            border: 1px solid #3f3f46;
+            border-radius: 8px;
+            border-left: 4px solid #71717a;
+            color: #71717a;
+            text-align: left;
+            min-height: 52px;
+            transition: all 0.3s ease;
+        }
+
+        #announce_result:not(:empty) {
+            border-left-color: #06b6d4;
+            color: #f4f4f5;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="container">
+        <div class="logo-wrapper">
+            <img src="EXAC.png" alt="EXAC Logo" class="logo-img">
+        </div>
+
         <h1>ICT CLUB CHECKER</h1>
-        <p>CANDIDATE VERIFICATION SYSTEM</p>
+        <p>Candidate Verification System</p>
 
         <div>
             <form onsubmit="return false;">

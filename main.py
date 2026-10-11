@@ -5,14 +5,12 @@ def check_club(e):
     # Clear previous result
     document.getElementById("announce_result").innerHTML = ""
     
-    # Get user input values
-    first_name = document.getElementById("first_name").value.strip()
-    last_name = document.getElementById("last_name").value.strip()
-    
-    # Combine first and last name into full name
+    # Get user input values then combined the first and last name
+    first_name = " ".join(document.getElementById("first_name").value.split()).title()
+    last_name = " ".join(document.getElementById("last_name").value.split()).title()
     name = f"{first_name} {last_name}"
 
-    # List of official candidates
+    # List of candidates (NOT THAT ACCURATE, BASED ON MEMORY ONLY DONT CANCEL ME)
     candidates = [
         'Francis Fernandez', 
         'Gavin Ruiz', 
@@ -24,8 +22,9 @@ def check_club(e):
         'Eliana Daet',
         'Lance Catu'
     ]
+    # DONT MIND Lance Catu: seatmate agreement XD
 
-    # Check if candidate exists in list (True or False)
+    # Checks if candidate exists in list (True or False)
     check_candidate = name in candidates
     # Turns check_candidate to integer (0 or 1)
     check_candidate = int(check_candidate)
